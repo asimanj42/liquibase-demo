@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql
+    ports:
+      - "3309:3306"
+    container_name: mysql-demo
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo-db

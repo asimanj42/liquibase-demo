@@ -1,0 +1,27 @@
+databaseChangeLog: #database dəyişiklərini tətbiq etmək üçün təlimat verir
+  - changeSet: #database-dəki dəyişikliyi tanımlayır
+      id: 2024-02-09-01 #changeset üçün unikal identity-dir
+      author: asiman #changet-in kim tərəfində yaradıldığını göstərir
+      changes: # changesetdəki real dəyişikləri(update,insert,delete və s) ehtiva edir
+        - createTable: # Yeni table yaradır
+            tableName: student # Table-ın adını bildirir
+            columns: # Yeni table-dakı columnların listini təmsil edir
+              - column: # Table-dakı bir sütunu təmsil edir
+                  name: id # Column-un adıdır
+                  type: BIGINT # Column-un data type-ı
+                  autoIncrement: true # Column-un avtomatik artıb-artmayacağını göstərir (daha çox id ilə işlənir)
+                  constraints: # Column üçün bəzi məhdudiyyətləri,məsələn null,unique olub-olmama və s. bildirir
+                    primaryKey: true # Columnun primary key olub-olmamağını göstərir
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+              - column:
+                  name: gpa
+                  type: BIGINT
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+
